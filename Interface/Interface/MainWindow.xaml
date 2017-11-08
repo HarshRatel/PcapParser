@@ -1,0 +1,27 @@
+﻿<Window x:Class="Interface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interface"
+        mc:Ignorable="d"
+        Title="PCAP parser" Height="720" Width="1280"
+        Margin="50,50,0,0"
+        ResizeMode="CanMinimize"
+        VerticalAlignment="Stretch"
+        HorizontalAlignment="Stretch"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1254"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <!-- PCAP parced data table -->
+        <DataGrid x:Name="dgTable" Margin="10,131,0,0" VerticalAlignment="Top" Height="550" Grid.Column="1"/>
+        <!-- File Dialog controlls -->
+        <Button x:Name="btnOpenFile" Click="BtnOpenFile_OnClick" Content="Open file" Width="60" Margin="0,10,905,0" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Name="txtEditor" Margin="9,10,0,0" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="275" Height="20" Grid.Column="1"/>
+        <Button x:Name="btnParse" Content="Parse" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="BtnParse_OnClick" RenderTransformOrigin="1.292,0.45" Grid.Column="1"/>
+    </Grid>
+</Window>

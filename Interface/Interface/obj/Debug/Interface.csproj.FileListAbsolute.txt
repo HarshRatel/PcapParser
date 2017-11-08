@@ -1,0 +1,16 @@
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\Interface.exe.config
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\Interface.exe
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\Interface.pdb
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\MainWindow.g.cs
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\App.g.cs
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface_MarkupCompile.cache
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface_MarkupCompile.lref
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\MainWindow.baml
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.g.resources
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.Properties.Resources.resources
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.csproj.GenerateResource.Cache
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.exe
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.pdb
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\PacketDotNet.dll
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\SharpPcap.dll
