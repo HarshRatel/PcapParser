@@ -9,11 +9,11 @@ namespace System.IO
 {
     public class Program
     {
-        public string writePath = @"../dir/msg.txt";
+        public string writePath = "../dir/msg.txt";
         
         public void CommonLog(string cmnMsg)
         {
-            using (StreamWriter cmnSw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
+            using (StreamWriter cmnSw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
             {
                 cmnSw.WriteLine(cmnMsg);
             }
