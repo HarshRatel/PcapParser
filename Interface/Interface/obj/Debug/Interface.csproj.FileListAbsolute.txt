@@ -12,3 +12,5 @@ C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\De
 C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.csproj.GenerateResource.Cache
 C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.exe
 C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\obj\Debug\Interface.pdb
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\PacketDotNet.dll
+C:\Users\Nikita\Documents\Visual Studio 2015\Projects\Interface\Interface\bin\Debug\SharpPcap.dll
