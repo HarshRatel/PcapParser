@@ -38,9 +38,11 @@ namespace Interface
 
 	    public class Item
 	    {
-		    public string ColOne { get; set; }
-			public string ColTwo { get; set; }
-			public string ColThree { get; set; }
+            public string typeColumn { get; set; }
+            public string srcAdrColumn { get; set; }
+            public string dstAdrColumn { get; set; }
+            public string srcPortColumn { get; set; }
+            public string dstPortColumn { get; set; }
 		}
 
         private void BtnParse_OnClick(object sender, RoutedEventArgs e)
@@ -51,7 +53,7 @@ namespace Interface
 				return;
 	        }
 
-	        dgTable.ColumnWidth = 406;
+	        dgTable.ColumnWidth = 243;
 	        dgTable.CanUserResizeColumns = false;
 	        dgTable.AutoGenerateColumns = false;
 
@@ -59,24 +61,34 @@ namespace Interface
 	        parser.Parse(txtEditor.Text);
 	        var table = parser.pcapTable;
 
-			DataGridTextColumn columnOne = new DataGridTextColumn();
-	        columnOne.Header = "Protocol type";
-	        columnOne.Binding = new Binding("ColOne");
-			dgTable.Columns.Add(columnOne);
+			DataGridTextColumn typeColumn = new DataGridTextColumn();
+	        typeColumn.Header = "Protocol type";
+            typeColumn.Binding = new Binding("typeColumn");
+			dgTable.Columns.Add(typeColumn);
 
-			DataGridTextColumn columnTwo = new DataGridTextColumn();
-			columnTwo.Header = "Source address";
-			columnTwo.Binding = new Binding("ColTwo");
-			dgTable.Columns.Add(columnTwo);
+			DataGridTextColumn srcAdrColumn = new DataGridTextColumn();
+			srcAdrColumn.Header = "Source address";
+            srcAdrColumn.Binding = new Binding("srcAdrColumn");
+			dgTable.Columns.Add(srcAdrColumn);
 
-			DataGridTextColumn columnThree = new DataGridTextColumn();
-			columnThree.Header = "Destination address";
-			columnThree.Binding = new Binding("ColThree");
-			dgTable.Columns.Add(columnThree);
+			DataGridTextColumn dstAdrColumn = new DataGridTextColumn();
+			dstAdrColumn.Header = "Destination address";
+            dstAdrColumn.Binding = new Binding("dstAdrColumn");
+			dgTable.Columns.Add(dstAdrColumn);
+
+            DataGridTextColumn srcPortColumn = new DataGridTextColumn();
+            srcPortColumn.Header = "Source Port";
+            srcPortColumn.Binding = new Binding("srcPortColumn");
+            dgTable.Columns.Add(srcPortColumn);
+
+            DataGridTextColumn dstPortColumn = new DataGridTextColumn();
+            dstPortColumn.Header = "Destination Port";
+            dstPortColumn.Binding = new Binding("dstPortColumn");
+            dgTable.Columns.Add(dstPortColumn);
 
 			foreach (var raw in table)
 	        {
-		        dgTable.Items.Add(new Item() {ColOne = raw[0], ColTwo = raw[1], ColThree = raw[2]});
+                dgTable.Items.Add(new Item() { typeColumn = raw[0], srcAdrColumn = raw[1], dstAdrColumn = raw[2], srcPortColumn = raw[3], dstPortColumn = raw[4] });
 	        }
         }
     }
