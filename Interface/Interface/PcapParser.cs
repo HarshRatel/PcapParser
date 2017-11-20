@@ -3,7 +3,9 @@ using System.Collections;
 using System.Net.NetworkInformation;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.Windows.Documents;
+using PacketDotNet;
 using SharpPcap;
 using SharpPcap.LibPcap;
 
@@ -31,31 +33,27 @@ namespace PcapParser
 		private void device_OnPacketArrival(object sender, CaptureEventArgs e)
 		{
 			List<string> row = new List<string>();
-
+            DateTime time = e.Packet.Timeval.Date;
+            int len = e.Packet.Data.Length;
+            
 			var packet = PacketDotNet.Packet.ParsePacket(e.Packet.LinkLayerType, e.Packet.Data);
 			if (packet is PacketDotNet.EthernetPacket)
 			{
 				var eth = ((PacketDotNet.EthernetPacket)packet);
-				Console.WriteLine("Eth: " + eth.ToString());
 
 				var ip = (PacketDotNet.IpPacket)packet.Extract(typeof(PacketDotNet.IpPacket));
 				if (ip != null)
 				{
-					Console.WriteLine("IP: " + ip.ToString());
-
-					ip.SourceAddress = System.Net.IPAddress.Parse("1.2.3.4");
-					ip.DestinationAddress = System.Net.IPAddress.Parse("44.33.22.11");
-					ip.TimeToLive = 11;
-
 					var tcp = (PacketDotNet.TcpPacket)packet.Extract(typeof(PacketDotNet.TcpPacket));
 					if (tcp != null)
 					{
 						row.Add("TCP");
-						row.Add(eth.SourceHwAddress.ToString());
-						row.Add(eth.DestinationHwAddress.ToString());
-						row.Add(tcp.SourcePort.ToString());
-						row.Add(tcp.DestinationPort.ToString());
-                        
+                        row.Add(time.ToString("s.ffff"));
+						row.Add(ip.SourceAddress.ToString());
+						row.Add(ip.DestinationAddress.ToString());
+                        row.Add(len.ToString());
+                        row.Add(tcp.SourcePort + " -> " + tcp.DestinationPort + "  Seq: " + tcp.SequenceNumber);
+					    tcp.Header.ToString();
 						pcapTable.Add(row);
 					}
 
@@ -63,15 +61,30 @@ namespace PcapParser
 					if (udp != null)
 					{
                         row.Add("UDP");
-                        row.Add(eth.SourceHwAddress.ToString());
-                        row.Add(eth.DestinationHwAddress.ToString());
-                        row.Add(udp.SourcePort.ToString());
-                        row.Add(udp.DestinationPort.ToString());
+                        row.Add(time.ToString("s.ffff"));
+                        row.Add(ip.SourceAddress.ToString());
+                        row.Add(ip.DestinationAddress.ToString());
+                        row.Add(len.ToString());
+                        row.Add(udp.SourcePort + "->" + udp.DestinationPort);
+                        
                         pcapTable.Add(row);
 					}
-				}
 
-				Console.WriteLine("");
+				    var icmp = (PacketDotNet.ICMPv4Packet) packet.Extract((typeof (PacketDotNet.ICMPv4Packet)));
+				    if (icmp != null)
+				    {
+				        row.Add("ICMP");
+                        row.Add(time.ToString("s.ffff"));
+                        row.Add(ip.SourceAddress.ToString());
+                        row.Add(ip.DestinationAddress.ToString());
+                        row.Add(len.ToString());
+                        row.Add("id: " + icmp.ID);
+                        
+
+                        pcapTable.Add(row);
+				    }
+                    
+				}
 			}
 		}
 	}
