@@ -67,6 +67,8 @@ namespace Interface
 				return;
 	        }
 
+			dgTable.Columns.Clear();
+
 	        dgTable.ColumnWidth = 203;
 	        dgTable.CanUserResizeColumns = false;
 	        dgTable.AutoGenerateColumns = false;
@@ -75,46 +77,47 @@ namespace Interface
 	        parser.Parse(txtEditor.Text);
 	        var table = parser.pcapTable;
 			
-			var typeColumn = new DataGridTextColumn
+			var protocolColumn = new DataGridTextColumn
 			{
 				Header = "Protocol type",
 				Binding = new Binding("protocolColumn")
 			};
-			dgTable.Columns.Add(typeColumn);
+			dgTable.Columns.Add(protocolColumn);
 
-			var srcAdrColumn = new DataGridTextColumn
+			var timeColumn = new DataGridTextColumn
 			{
 				Header = "Time",
 				Binding = new Binding("timeColumn")
 			};
-			dgTable.Columns.Add(srcAdrColumn);
+			dgTable.Columns.Add(timeColumn);
 
-			var dstAdrColumn = new DataGridTextColumn
+			var srcColumn = new DataGridTextColumn
 			{
 				Header = "Source IP",
 				Binding = new Binding("srcColumn")
 			};
-			dgTable.Columns.Add(dstAdrColumn);
+			dgTable.Columns.Add(srcColumn);
 
-			var srcPortColumn = new DataGridTextColumn
+			var dstColumn = new DataGridTextColumn
 			{
 				Header = "Destination IP",
 				Binding = new Binding("dstColumn")
 			};
-			dgTable.Columns.Add(srcPortColumn);
+			dgTable.Columns.Add(dstColumn);
 
-			var dstPortColumn = new DataGridTextColumn
+			var lengthColumn = new DataGridTextColumn
 			{
 				Header = "Length",
 				Binding = new Binding("lengthColumn")
 			};
-			dgTable.Columns.Add(dstPortColumn);
+			dgTable.Columns.Add(lengthColumn);
 
 	        var infoColumn = new DataGridTextColumn
 	        {
 				Header = "Info",
 				Binding = new Binding("infoColumn")
 	        };
+			dgTable.Columns.Add(infoColumn);
 
 			foreach (var raw in table)
 	        {
