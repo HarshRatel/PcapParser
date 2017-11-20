@@ -21,13 +21,18 @@ namespace Interface
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
+		/// <summary>
+		/// "btnOpenFile" button click handler
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void BtnOpenFile_OnClick(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog {Filter = "PCAP-files (*.pcap)|*.pcap"};
@@ -36,15 +41,24 @@ namespace Interface
                 txtEditor.Text = openFileDialog.FileName;
         }
 
-	    public class Item
-	    {
-            public string typeColumn { get; set; }
-            public string srcAdrColumn { get; set; }
-            public string dstAdrColumn { get; set; }
-            public string srcPortColumn { get; set; }
-            public string dstPortColumn { get; set; }
+		/// <summary>
+		/// Columns class
+		/// </summary>
+	    private class Item
+		{
+			public string protocolColumn { get; set; }
+			public string timeColumn { get; set; }
+			public string srcColumn { get; set; }
+			public string dstColumn { get; set; }
+            public string lengthColumn { get; set; }
+			public string infoColumn { get; set; }
 		}
 
+		/// <summary>
+		/// "btnParse" button handler
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void BtnParse_OnClick(object sender, RoutedEventArgs e)
         {
 	        if (txtEditor.Text == "")
@@ -53,43 +67,75 @@ namespace Interface
 				return;
 	        }
 
-	        dgTable.ColumnWidth = 243;
+	        dgTable.ColumnWidth = 203;
 	        dgTable.CanUserResizeColumns = false;
 	        dgTable.AutoGenerateColumns = false;
 
-			PcapParser.PacketManipulation parser = new PacketManipulation();
+			var parser = new PacketManipulation();
 	        parser.Parse(txtEditor.Text);
 	        var table = parser.pcapTable;
-
-			DataGridTextColumn typeColumn = new DataGridTextColumn();
-	        typeColumn.Header = "Protocol type";
-            typeColumn.Binding = new Binding("typeColumn");
+			
+			var typeColumn = new DataGridTextColumn
+			{
+				Header = "Protocol type",
+				Binding = new Binding("protocolColumn")
+			};
 			dgTable.Columns.Add(typeColumn);
 
-			DataGridTextColumn srcAdrColumn = new DataGridTextColumn();
-			srcAdrColumn.Header = "Source address";
-            srcAdrColumn.Binding = new Binding("srcAdrColumn");
+			var srcAdrColumn = new DataGridTextColumn
+			{
+				Header = "Time",
+				Binding = new Binding("timeColumn")
+			};
 			dgTable.Columns.Add(srcAdrColumn);
 
-			DataGridTextColumn dstAdrColumn = new DataGridTextColumn();
-			dstAdrColumn.Header = "Destination address";
-            dstAdrColumn.Binding = new Binding("dstAdrColumn");
+			var dstAdrColumn = new DataGridTextColumn
+			{
+				Header = "Source IP",
+				Binding = new Binding("srcColumn")
+			};
 			dgTable.Columns.Add(dstAdrColumn);
 
-            DataGridTextColumn srcPortColumn = new DataGridTextColumn();
-            srcPortColumn.Header = "Source Port";
-            srcPortColumn.Binding = new Binding("srcPortColumn");
-            dgTable.Columns.Add(srcPortColumn);
+			var srcPortColumn = new DataGridTextColumn
+			{
+				Header = "Destination IP",
+				Binding = new Binding("dstColumn")
+			};
+			dgTable.Columns.Add(srcPortColumn);
 
-            DataGridTextColumn dstPortColumn = new DataGridTextColumn();
-            dstPortColumn.Header = "Destination Port";
-            dstPortColumn.Binding = new Binding("dstPortColumn");
-            dgTable.Columns.Add(dstPortColumn);
+			var dstPortColumn = new DataGridTextColumn
+			{
+				Header = "Length",
+				Binding = new Binding("lengthColumn")
+			};
+			dgTable.Columns.Add(dstPortColumn);
+
+	        var infoColumn = new DataGridTextColumn
+	        {
+				Header = "Info",
+				Binding = new Binding("infoColumn")
+	        };
 
 			foreach (var raw in table)
 	        {
-                dgTable.Items.Add(new Item() { typeColumn = raw[0], srcAdrColumn = raw[1], dstAdrColumn = raw[2], srcPortColumn = raw[3], dstPortColumn = raw[4] });
+                dgTable.Items.Add(new Item() { protocolColumn = raw[0],
+												timeColumn  = raw[1],
+												srcColumn = raw[2],
+												dstColumn = raw[3],
+												lengthColumn = raw[4],
+												infoColumn = raw[5]
+												});
 	        }
         }
+
+		/// <summary>
+		/// "btnLog" button handler
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+	    private void BtnLog_OnClick(object sender, RoutedEventArgs e)
+	    {
+			System.Diagnostics.Process.Start(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt"));
+		}
     }
 }

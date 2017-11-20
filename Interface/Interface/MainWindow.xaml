@@ -6,22 +6,21 @@
         xmlns:local="clr-namespace:Interface"
         mc:Ignorable="d"
         Title="PCAP parser" Height="720" Width="1280"
-        Margin="50,50,0,0"
+        Margin="0,0,0,0"
         ResizeMode="CanMinimize"
         VerticalAlignment="Stretch"
         HorizontalAlignment="Stretch"
         >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="1254"/>
-            <ColumnDefinition Width="10"/>
-        </Grid.ColumnDefinitions>
         <!-- PCAP parced data table -->
-        <DataGrid x:Name="dgTable" Margin="10,131,0,0" VerticalAlignment="Top" Height="550" Grid.Column="1"/>
+        <DataGrid x:Name="dgTable" Margin="10,131,0,0" VerticalAlignment="Top" Height="550"/>
         <!-- File Dialog controlls -->
-        <Button x:Name="btnOpenFile" Click="BtnOpenFile_OnClick" Content="Open file" Width="60" Margin="0,10,905,0" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox Name="txtEditor" Margin="9,10,0,0" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="275" Height="20" Grid.Column="1"/>
-        <Button x:Name="btnParse" Content="Parse" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="BtnParse_OnClick" RenderTransformOrigin="1.292,0.45" Grid.Column="1"/>
+        <Button x:Name="btnOpenFile" Click="BtnOpenFile_OnClick" Content="Open file" Width="60" Margin="0,10,925,0" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" />
+        <TextBox Name="txtEditor" Text="Device path"  Margin="9,10,0,0" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="275" Height="20" />
+        <!-- "Parse" button -->
+        <Button x:Name="btnParse" Content="Parse" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="BtnParse_OnClick" RenderTransformOrigin="1.292,0.45"/>
+        <!-- "Show logs" button -->
+        <Button x:Name="btnLog" Content="Show logs" HorizontalAlignment="Left" Margin="1184,10,0,0" VerticalAlignment="Top" Width="60" Click="BtnLog_OnClick"/>
+        
     </Grid>
 </Window>
