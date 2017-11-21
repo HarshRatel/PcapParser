@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -8,12 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Win32;
 using PcapParser;
 
@@ -95,54 +89,6 @@ namespace Interface
 
 			_myCollection.Clear();
 
-			/*var protocolColumn = new DataGridTextColumn
-			{
-				Header = "Protocol type",
-				Binding = new Binding("protocolColumn"),
-				Width = 140
-			};
-			dgTable.Columns.Add(protocolColumn);
-
-			var timeColumn = new DataGridTextColumn
-			{
-				Header = "Time",
-				Binding = new Binding("timeColumn"),
-				Width = 125
-			};
-			dgTable.Columns.Add(timeColumn);
-
-			var srcColumn = new DataGridTextColumn
-			{
-				Header = "Source IP",
-				Binding = new Binding("srcColumn"),
-				Width = 125
-			};
-			dgTable.Columns.Add(srcColumn);
-
-			var dstColumn = new DataGridTextColumn
-			{
-				Header = "Destination IP",
-				Binding = new Binding("dstColumn"),
-				Width = 125
-			};
-			dgTable.Columns.Add(dstColumn);
-
-			var lengthColumn = new DataGridTextColumn
-			{
-				Header = "Length",
-				Binding = new Binding("lengthColumn"),
-				Width = 60
-			};
-			dgTable.Columns.Add(lengthColumn);
-
-			var infoColumn = new DataGridTextColumn
-			{
-				Header = "Info",
-				Binding = new Binding("infoColumn"),
-				Width = 644
-			};
-			dgTable.Columns.Add(infoColumn);*/
-
 			foreach (var raw in table)
 			{
 				_myCollection.Add(new Item()
@@ -164,7 +110,7 @@ namespace Interface
 		/// <param name="e"></param>
 		private void BtnLog_OnClick(object sender, RoutedEventArgs e)
 		{
-			System.Diagnostics.Process.Start(System.IO.Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt"));
+			System.Diagnostics.Process.Start(Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt"));
 		}
 
 		/// <summary>
