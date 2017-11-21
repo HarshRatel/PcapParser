@@ -13,14 +13,14 @@
         >
     <Grid>
         <!-- PCAP parced data table -->
-        <DataGrid x:Name="dgTable" Margin="10,131,10,0" VerticalAlignment="Top" Height="540" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" BeginningEdit="DgTable_OnBeginningEdit">
+        <DataGrid x:Name="dgTable" Margin="10,131,10,0" VerticalAlignment="Top" Height="540" HorizontalScrollBarVisibility="Disabled" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserAddRows="False" BeginningEdit="DgTable_OnBeginningEdit">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Protocol type" Binding="{Binding Path=protocolColumn}" Width="140"/>
                 <DataGridTextColumn Header="Time" Binding="{Binding Path=timeColumn}" Width="125"/>
                 <DataGridTextColumn Header="Source IP" Binding="{Binding Path=srcColumn}" Width="125"/>
                 <DataGridTextColumn Header="Destination IP" Binding="{Binding Path=dstColumn}" Width="125"/>
                 <DataGridTextColumn Header="Length" Binding="{Binding Path=lengthColumn}" Width="60"/>
-                <DataGridTextColumn Header="Info" Binding="{Binding Path=infoColumn}" Width="644"/>
+                <DataGridTextColumn Header="Info" Binding="{Binding Path=infoColumn}" Width="700"/>
             </DataGrid.Columns>
         </DataGrid>
         <!-- File Dialog controlls -->
@@ -29,7 +29,9 @@
         <!-- "Parse" button -->
         <Button x:Name="btnParse" Content="Parse" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="60" Height="20" Click="BtnParse_OnClick" RenderTransformOrigin="1.292,0.45"/>
         <!-- "Show logs" button -->
-        <Button x:Name="btnLog" Content="Show logs" HorizontalAlignment="Left" Margin="1184,10,0,0" VerticalAlignment="Top" Width="60" Click="BtnLog_OnClick"/>
+        <Button x:Name="btnLog" Content="Show logs" HorizontalAlignment="Left" Margin="1193,10,0,0" VerticalAlignment="Top" Width="60" Click="BtnLog_OnClick"/>
+        <!-- "Clear" button -->
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="1193,106,0,0" VerticalAlignment="Top" Width="60" Click="BtnClear_OnClick"/>
         <!-- Filter textbox and label -->
         <TextBox x:Name="tbFilter" HorizontalAlignment="Left" Height="20" Margin="10,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TbFilter_OnTextChanged"/>
         <Label x:Name="lbFilter" Content="Enter filter" HorizontalAlignment="Left" Margin="135,106,0,0" VerticalAlignment="Top" Height="20" Padding="0,2,0,0"/>

@@ -68,6 +68,8 @@ namespace Interface
 				return;
 			}
 
+			tbFilter.Text = "";
+
 			var parser = new PacketManipulation();
 			parser.Parse(txtEditor.Text);
 			_parcedList.Clear();
@@ -124,7 +126,7 @@ namespace Interface
 		}
 
 		/// <summary>
-		/// Filter handler
+		/// Filter "OnTextChanged" event handler
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
@@ -137,6 +139,18 @@ namespace Interface
 			}
 			var filteredList = _parcedList.Where(raw => raw[0].Contains(tbFilter.Text)).ToList();
 			DrawTable(filteredList);
+		}
+
+		/// <summary>
+		/// "btnClear" handler
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void BtnClear_OnClick(object sender, RoutedEventArgs e)
+		{
+			_parcedList.Clear();
+			_myCollection.Clear();
+			txtEditor.Text = "Device path";
 		}
 	}
 }
