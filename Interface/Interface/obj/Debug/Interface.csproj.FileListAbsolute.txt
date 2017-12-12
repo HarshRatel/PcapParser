@@ -31,7 +31,6 @@ C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interf
 C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interface.exe
 C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interface.pdb
 C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\LightInject.dll
-C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\Interface.exe.config
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\Interface.exe
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\Interface.pdb
@@ -50,3 +49,15 @@ C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interf
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interface.csproj.GenerateResource.Cache
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interface.exe
 C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\Interface\obj\Debug\Interface.pdb
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Base.dll
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.dll
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Packets.dll
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Base.pdb
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Base.xml
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.pdb
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.xml
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Packets.pdb
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Packets.xml
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.Extensions.dll
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.Extensions.pdb
+C:\Users\Landis\Documents\GitHub\PcapParser\Interface\Interface\bin\Debug\PcapDotNet.Core.Extensions.xml

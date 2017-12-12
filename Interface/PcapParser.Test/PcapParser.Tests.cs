@@ -14,11 +14,14 @@ namespace PcapParser.Test
 		public void CorrectStartTest()
 		{
 			var parser = new PacketManipulation();
-			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"../../../http.pcap"));
+			parser.Parse(Path.Combine("C:/Users/Landis/Documents/GitHub/PcapParser/Interface/http.pcap"));
 			Assert.That(parser.pcapTable.Any(), Is.True);
 
-			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"../../../icmp.pcap"));
+			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"C:/Users/Landis/Documents/GitHub/PcapParser/Interface/icmp.pcap"));
 			Assert.That(parser.pcapTable.Any(), Is.True);
+
+            parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"C:/Users/Landis/Documents/GitHub/PcapParser/Interface/login.pcap"));
+            Assert.That(parser.pcapTable.Any(), Is.True);
 		}
 
 		[Test]

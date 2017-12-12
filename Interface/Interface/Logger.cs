@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
+using Interface;
 using PacketDotNet;
 
 namespace PcapParser
 {
-    public class Logger
+    public class Logger : ILogger
     {
 		private string writePath = Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt");
 
