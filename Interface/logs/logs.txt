@@ -1,1 +1,1 @@
-failed to read ip packet
+[0:00] :Wrong device path used : "C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\PcapParser.Test\bin\Debug\../../../wrongpath.pcap"

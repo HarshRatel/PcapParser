@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Interface;
 using LightInject;
 using SharpPcap;
@@ -25,6 +26,14 @@ namespace PcapParser
 
 		public void Parse(string devicePath)   
 		{
+			pcapTable.Clear();
+
+			if (!File.Exists(devicePath))
+			{
+				logger.CommonLog("[" + DateTime.Today.ToShortTimeString() + "] :Wrong device path used : \"" + devicePath + "\"");
+				throw new ArgumentException("Wrong device path");
+			}
+
 			ICaptureDevice device = new CaptureFileReaderDevice(devicePath);
 			
 			device.OnPacketArrival += new PacketArrivalEventHandler(device_OnPacketArrival);
@@ -53,7 +62,11 @@ namespace PcapParser
 		        {
 		            pcapTable.Add(node);
                     return;
-		        }   
+		        }
+				else
+				{
+					logger.PacketLog(packet);
+				}
 		    }
 		}
 	}
