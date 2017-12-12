@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using PacketDotNet;
 
 namespace PcapParser
@@ -11,8 +12,9 @@ namespace PcapParser
         {
             using (var cmnSw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
             {
-                cmnSw.WriteLine(cmnMsg);
-            }
+                cmnSw.WriteLine("[" + DateTime.Now.ToShortTimeString() + "]:" + cmnMsg);
+
+			}
         }
 
         public void PacketLog(Packet packet)

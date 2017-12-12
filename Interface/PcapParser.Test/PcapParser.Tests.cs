@@ -11,7 +11,7 @@ namespace PcapParser.Test
 	public class PcapParserTests
 	{
 		[Test]
-		public void StartTest()
+		public void CorrectStartTest()
 		{
 			var parser = new PacketManipulation();
 			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"../../../http.pcap"));
@@ -19,6 +19,12 @@ namespace PcapParser.Test
 
 			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"../../../icmp.pcap"));
 			Assert.That(parser.pcapTable.Any(), Is.True);
+		}
+
+		[Test]
+		public void WrongStartTest()
+		{
+			var parser = new PacketManipulation();
 
 			try
 			{
@@ -28,8 +34,6 @@ namespace PcapParser.Test
 			{
 				Console.WriteLine(e);
 			}
-			
 		}
-		
 	}
 }

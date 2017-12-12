@@ -30,7 +30,7 @@ namespace PcapParser
 
 			if (!File.Exists(devicePath))
 			{
-				logger.CommonLog("[" + DateTime.Today.ToShortTimeString() + "] :Wrong device path used : \"" + devicePath + "\"");
+				logger.CommonLog("[" + DateTime.Now.ToShortTimeString() + "]: Wrong device path used : \"" + devicePath + "\"");
 				throw new ArgumentException("Wrong device path");
 			}
 
@@ -63,10 +63,6 @@ namespace PcapParser
 		            pcapTable.Add(node);
                     return;
 		        }
-				else
-				{
-					logger.PacketLog(packet);
-				}
 		    }
 		}
 	}
