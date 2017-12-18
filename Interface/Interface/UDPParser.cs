@@ -6,6 +6,11 @@ namespace Interface
 {
     class UDPParser : IParser
     {
+        /// <summary>
+        /// Parse UDP packet
+        /// </summary>
+        /// <param name="packet">packet for analysing</param>
+        /// <returns>information about packet</returns>
         public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();
@@ -16,7 +21,7 @@ namespace Interface
                 return row;
 
             if (udp.IsValid)
-            {
+            {   
                     row.Add("UDP");
                     row.Add(packet.Timestamp.ToString("s.ffff"));
                     row.Add(ip.Source.ToString());

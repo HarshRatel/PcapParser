@@ -6,6 +6,11 @@ namespace Interface
 {
     class TCPParser : IParser
     {
+        /// <summary>
+        /// Parse TCP packet
+        /// </summary>
+        /// <param name="packet">packet for analysing</param>
+        /// <returns>information about packet</returns>
         public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();

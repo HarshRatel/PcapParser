@@ -20,10 +20,15 @@ namespace PcapParser.Test
 			parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"C:/Users/Landis/Documents/GitHub/PcapParser/Interface/icmp.pcap"));
 			Assert.That(parser.pcapTable.Any(), Is.True);
 
-            parser.Parse(Path.Combine(Directory.GetCurrentDirectory(), @"C:/Users/Landis/Documents/GitHub/PcapParser/Interface/login.pcap"));
-            Assert.That(parser.pcapTable.Any(), Is.True);
 		}
 
+	    [Test]
+	    public void WrongPathTest()
+	    {
+	        var parser = new PacketManipulation();
+
+	        Assert.Throws<ArgumentException>(delegate { parser.Parse("asd"); });
+	    }
 		[Test]
 		public void WrongStartTest()
 		{

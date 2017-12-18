@@ -55,7 +55,7 @@ namespace PcapParser
             string[] parserList = { "HTTPParser", "TCPParser", "UDPParser", "ICMPParser" };
 
             if (!packet.IsValid)
-                logger.CommonLog("[" + DateTime.Now.ToShortTimeString() + "] | Error in parsing " + packet.ToString() + "packet.");
+                logger.CommonLog("[" + DateTime.Now.ToShortTimeString() + "] | Error in parsing " + packet.ToString() + " time " + packet.Timestamp.ToString("s.ffff") + " packet.");
 
             foreach (var parserName in parserList)
             {

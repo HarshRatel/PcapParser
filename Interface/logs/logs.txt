@@ -1,21 +1,25 @@
-[22:56]:[12 декабря 2017 г.] | Wrong device path used : "C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\PcapParser.Test\bin\Debug\../../../wrongpath.pcap".
-[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
-[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
-[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 492>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 611>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 607>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 524>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 584>packet.
-[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 520>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 523>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 4150>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 589>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 517>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 588>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
-[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.
+[1:34]:[1:34] | Error in parsing 66 bytes: 0a002700000c080027db... time 53.8945 packet.
+[1:34]:[1:34] | Error in parsing 826 bytes: 0a002700000c080027db... time 53.9481 packet.
+[1:35]:[1:35] | Error in parsing System.Byte[] time 53.8945 packet.
+[1:35]:[1:35] | Error in parsing System.Byte[] time 53.9481 packet.
+[1:35]:[1:35] | Error in parsing System.Byte[] time 53.8945 packet.
+[1:35]:[1:35] | Error in parsing System.Byte[] time 53.9481 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 66> time 53.8945 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 826> time 53.9481 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 492> time 47.8578 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 611> time 47.9266 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 521> time 48.0526 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 607> time 48.0692 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 524> time 48.2153 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 584> time 48.2298 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 520> time 48.2870 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 586> time 48.3404 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 523> time 48.3946 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 4150> time 48.4138 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 589> time 48.4233 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 521> time 49.4418 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 586> time 49.5030 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 517> time 49.6584 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 588> time 49.6608 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 521> time 49.7322 packet.
+[1:36]:[1:36] | Error in parsing Packet <EN10MB (Ethernet), 586> time 49.7701 packet.

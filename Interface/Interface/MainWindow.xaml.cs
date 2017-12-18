@@ -104,7 +104,7 @@ namespace Interface
         /// <param name="e"></param>
         private void BtnLog_OnClick(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt"));
+            System.Diagnostics.Process.Start(Path.Combine(Directory.GetCurrentDirectory(), @"../../../../logs/logs.txt"));
         }
 
         /// <summary>

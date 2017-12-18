@@ -5,8 +5,16 @@ using PcapDotNet.Packets.Transport;
 
 namespace Interface
 {
+    /// <summary>
+    /// Class for parsing http packets
+    /// </summary>
     class HTTPParser : IParser
     {
+        /// <summary>
+        /// Parse http packet
+        /// </summary>
+        /// <param name="packet">packet for analysing</param>
+        /// <returns>information about packet</returns>
         public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();
@@ -18,6 +26,7 @@ namespace Interface
 
             HttpDatagram http = tcp.Http;
 
+            //If packet is valid, return info about packet
             if (http.IsValid && http.IsRequest)
             {
                 if (http.Header != null)

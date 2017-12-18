@@ -6,6 +6,11 @@ namespace Interface
 {
     class ICMPParser : IParser
     {
+        /// <summary>
+        /// Parse icmp packet
+        /// </summary>
+        /// <param name="packet">packet for analysing</param>
+        /// <returns>information about packet</returns>
         public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();
@@ -15,6 +20,7 @@ namespace Interface
             if (icmp == null)
                 return row;
 
+            //return icmp info if packet is valid
             if (icmp.IsValid)
             {
                 row.Add("TCP");
