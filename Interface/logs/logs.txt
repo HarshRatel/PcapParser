@@ -1,1 +1,21 @@
 [22:56]:[12 декабря 2017 г.] | Wrong device path used : "C:\Users\Nikita\Documents\GitHub\PcapParser\Interface\PcapParser.Test\bin\Debug\../../../wrongpath.pcap".
+[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
+[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
+[23:54]:[23:54] | Error in parsing Packet <EN10MB (Ethernet), 66>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 492>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 611>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 607>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 524>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 584>packet.
+[0:14]:[0:14] | Error in parsing Packet <EN10MB (Ethernet), 520>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 523>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 4150>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 589>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 517>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 588>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 521>packet.
+[0:15]:[0:15] | Error in parsing Packet <EN10MB (Ethernet), 586>packet.

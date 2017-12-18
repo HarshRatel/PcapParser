@@ -1,40 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PacketDotNet;
-using PcapParser;
-using SharpPcap;
+﻿using System.Collections.Generic;
+using PcapDotNet.Packets.Icmp;
+using PcapDotNet.Packets.IpV4;
 
 namespace Interface
 {
     class ICMPParser : IParser
     {
-        public List<string> ParsePacket(Packet packet, CaptureEventArgs e)
+        public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();
-            DateTime time = e.Packet.Timeval.Date;
-            int len = e.Packet.Data.Length;
+            IpV4Datagram ip = packet.Ethernet.IpV4;
+            IcmpDatagram icmp = ip.Icmp;
 
-            if (packet is PacketDotNet.EthernetPacket)
+            if (icmp == null)
+                return row;
+
+            if (icmp.IsValid)
             {
-                var eth = ((PacketDotNet.EthernetPacket) packet);
-
-                var ip = (PacketDotNet.IpPacket) packet.Extract(typeof (PacketDotNet.IpPacket));
-                if (ip != null)
-                {
-                    var icmp = (PacketDotNet.ICMPv4Packet) packet.Extract((typeof (PacketDotNet.ICMPv4Packet)));
-                    if (icmp != null)
-                    {
-                        row.Add("ICMP");
-                        row.Add(time.ToString("s.ffff"));
-                        row.Add(ip.SourceAddress.ToString());
-                        row.Add(ip.DestinationAddress.ToString());
-                        row.Add(len.ToString());
-                        row.Add("id: " + icmp.ID);
-                    }
-                }
+                row.Add("TCP");
+                row.Add(packet.Timestamp.ToString("s.ffff"));
+                row.Add(ip.Source.ToString());
+                row.Add(ip.Destination.ToString());
+                row.Add(packet.Length.ToString());
+                row.Add("id: " + icmp.Variable);
             }
 
             return row;

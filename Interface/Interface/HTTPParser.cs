@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PacketDotNet;
-using PcapDotNet.Packets;
+﻿using System.Collections.Generic;
 using PcapDotNet.Packets.Http;
 using PcapDotNet.Packets.IpV4;
 using PcapDotNet.Packets.Transport;
-using SharpPcap;
 
 namespace Interface
 {
-    class HTTPParser
+    class HTTPParser : IParser
     {
         public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
@@ -38,7 +31,7 @@ namespace Interface
                 }
             }
 
-            return row;;
+            return row; ;
         }
     }
 }

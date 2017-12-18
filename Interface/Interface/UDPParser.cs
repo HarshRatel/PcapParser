@@ -1,39 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PacketDotNet;
-using SharpPcap;
+﻿using System.Collections.Generic;
+using PcapDotNet.Packets.IpV4;
+using PcapDotNet.Packets.Transport;
 
 namespace Interface
 {
     class UDPParser : IParser
     {
-        public List<string> ParsePacket(Packet packet, CaptureEventArgs e)
+        public List<string> ParsePacket(PcapDotNet.Packets.Packet packet)
         {
             List<string> row = new List<string>();
-            DateTime time = e.Packet.Timeval.Date;
-            int len = e.Packet.Data.Length;
+            IpV4Datagram ip = packet.Ethernet.IpV4;
+            UdpDatagram udp = ip.Udp;
 
-            if (packet is PacketDotNet.EthernetPacket)
+            if (udp == null)
+                return row;
+
+            if (udp.IsValid)
             {
-                var eth = ((PacketDotNet.EthernetPacket)packet);
-
-                var ip = (PacketDotNet.IpPacket)packet.Extract(typeof(PacketDotNet.IpPacket));
-                if (ip != null)
-                {
-                    var udp = (PacketDotNet.UdpPacket)packet.Extract(typeof(PacketDotNet.UdpPacket));
-                    if (udp != null)
-                    {
-                        row.Add("UDP");
-                        row.Add(time.ToString("s.ffff"));
-                        row.Add(ip.SourceAddress.ToString());
-                        row.Add(ip.DestinationAddress.ToString());
-                        row.Add(len.ToString());
-                        row.Add(udp.SourcePort + "->" + udp.DestinationPort);
-                    }
-                }
+                    row.Add("UDP");
+                    row.Add(packet.Timestamp.ToString("s.ffff"));
+                    row.Add(ip.Source.ToString());
+                    row.Add(ip.Destination.ToString());
+                    row.Add(packet.Length.ToString());
+                    row.Add(udp.SourcePort + "->" + udp.DestinationPort);
             }
 
             return row;

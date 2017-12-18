@@ -7,7 +7,7 @@ namespace PcapParser
 {
     public class Logger : ILogger
     {
-		private string writePath = Path.Combine(Directory.GetCurrentDirectory(), @"../../../logs/logs.txt");
+		private string writePath = Path.Combine(Directory.GetCurrentDirectory(), @"..\\..\\..\\..\\logs\\logs.txt");
 
         public void CommonLog(string cmnMsg)
         {
